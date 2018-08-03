@@ -6,8 +6,8 @@ import './ChatInput.css';
 import MessageModel from '../models/message';
 
 class ChatInput extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       value: ''
     };

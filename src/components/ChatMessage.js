@@ -8,7 +8,7 @@ const ChatMessage = ({ message }) => {
   return (
     <div className="chat-message-container bg-info">
       <span>{message.text}</span>
-      {message.displayTime}
+      <span>{message.displayTime}</span>
     </div>
   );
 };

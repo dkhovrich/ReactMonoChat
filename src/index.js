@@ -5,6 +5,6 @@ import './index.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap-theme.css';
 
-import App from './components/App';
+import Chat from './components/Chat';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<Chat />, document.getElementById('root'));

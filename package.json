@@ -1,0 +1,26 @@
+{
+  "name": "mono-chat",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "https://dkhovrich.github.io/ReactMonoChat",
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "gh-pages": "^1.2.0",
+    "moment": "^2.22.2",
+    "react": "^16.4.2",
+    "react-bootstrap": "^0.32.1",
+    "react-dom": "^16.4.2",
+    "react-scripts": "1.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
+  "devDependencies": {
+    "@types/prop-types": "^15.5.4"
+  }
+}

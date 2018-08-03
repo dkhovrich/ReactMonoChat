@@ -1,0 +1,7 @@
+.chat-input-container {
+  display: flex;
+}
+
+.chat-input-container input[type="text"] {
+  margin-right: 10px;
+}

@@ -27,12 +27,12 @@ class ChatInput extends Component {
   }
 
   sendMessage() {
-    if (this.state.value) {
-      const message = new MessageModel(this.state.value);
-      this.props.onSend(message);
+    if (!this.state.value) return;
 
-      this.setState({ value: '' });
-    }
+    const message = new MessageModel(this.state.value);
+    this.props.onSend(message);
+
+    this.setState({ value: '' });
   }
 
   render() {

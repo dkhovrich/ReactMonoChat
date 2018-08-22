@@ -5,7 +5,7 @@ import { Panel, Badge } from 'react-bootstrap';
 
 import ChatMessages from './ChatMessages';
 import ChatInput from './ChatInput';
-import { addMessage } from '../actions/messageActions';
+import { ADD_MESSAGE_REQUEST } from '../actions/messageActions';
 
 import MessageModel from '../models/message';
 
@@ -38,7 +38,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  onNewMessage: message => dispatch(addMessage(message))
+  onNewMessage: message => dispatch({ type: ADD_MESSAGE_REQUEST, payload: message })
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Chat);

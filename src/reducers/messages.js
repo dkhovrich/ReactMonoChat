@@ -1,7 +1,7 @@
 import createReducer from './createReducer';
 import { ADD_MESSAGE_REQUEST, ADD_MESSAGE_SUCCESS } from '../actions/messageActions';
 
-const initialState = {
+export const initialState = {
   isFetching: false,
   data: []
 };

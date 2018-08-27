@@ -9,7 +9,7 @@ import { addMessage } from '../actions/messageActions';
 
 import MessageModel from '../models/message';
 
-const Chat = ({ messages, isFetching, onNewMessage }) => {
+export const Chat = ({ messages, onNewMessage }) => {
   return (
     <Panel bsStyle="primary">
       <Panel.Heading>
@@ -28,13 +28,11 @@ const Chat = ({ messages, isFetching, onNewMessage }) => {
 
 Chat.propTypes = {
   messages: PropTypes.arrayOf(PropTypes.instanceOf(MessageModel)).isRequired,
-  isFetching: PropTypes.bool.isRequired,
   onNewMessage: PropTypes.func.isRequired
 }
 
 const mapStateToProps = state => ({
-  messages: state.messages.data,
-  isFetching: state.messages.isFetching
+  messages: state.messages.data
 });
 
 const mapDispatchToProps = dispatch => ({

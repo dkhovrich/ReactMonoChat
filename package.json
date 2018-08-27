@@ -22,10 +22,12 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "flow": "flow"
   },
   "devDependencies": {
     "@types/prop-types": "^15.5.4",
+    "flow-bin": "^0.79.1",
     "redux-devtools-extension": "^2.13.5"
   }
 }

@@ -1,32 +1,33 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+// @flow
+import * as React from 'react';
 import { FormGroup, FormControl, Button } from 'react-bootstrap';
 import './ChatInput.css';
 
 import MessageModel from '../models/message';
 
-class ChatInput extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      value: ''
-    };
+type Props = {
+  onSend: Function
+};
 
-    this.handleChange = this.handleChange.bind(this);
-    this.sendMessage = this.sendMessage.bind(this);
-    this.onSubmit = this.onSubmit.bind(this);
+type State = {
+  value: string
+};
+
+class ChatInput extends React.Component<Props, State> {
+  state = {
+    value: ''
+  };
+
+  handleChange = (event: SyntheticEvent<HTMLInputElement>) => {
+    this.setState({ value: event.currentTarget.value });
   }
 
-  handleChange(e) {
-    this.setState({ value: e.target.value });
-  }
-
-  onSubmit(e) {
-    e.preventDefault();
+  onSubmit = (event: SyntheticEvent<HTMLButtonElement>) => {
+    event.preventDefault();
     this.sendMessage();
   }
 
-  sendMessage() {
+  sendMessage = () => {
     if (!this.state.value) return;
 
     const message = new MessageModel(this.state.value);
@@ -46,10 +47,6 @@ class ChatInput extends Component {
       </form>
     );
   }
-}
-
-ChatInput.propTypes = {
-  onSend: PropTypes.func.isRequired
 }
 
 export default ChatInput;

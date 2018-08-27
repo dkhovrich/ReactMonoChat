@@ -1,17 +1,23 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+// @flow
+import * as React from 'react';
 import './ChatMessages.css';
 
 import ChatMessage from './ChatMessage';
 import MessageModel from '../models/message';
 
-class ChatMessages extends Component {
-  constructor(props) {
+type Props = {
+  messages: Array<MessageModel>
+};
+
+class ChatMessages extends React.Component<Props> {
+  containerRef: any;
+
+  constructor(props: Props) {
     super(props);
     this.containerRef = React.createRef();
   }
 
-  componentDidUpdate(prevProps) {
+  componentDidUpdate(prevProps: Props) {
     if (this.props.messages.length > prevProps.messages.length) {
       this.scrollToBottom();
     }
@@ -29,9 +35,5 @@ class ChatMessages extends Component {
     )
   }
 }
-
-ChatMessages.propTypes = {
-  messages: PropTypes.arrayOf(PropTypes.instanceOf(MessageModel)).isRequired
-};
 
 export default ChatMessages;

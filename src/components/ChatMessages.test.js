@@ -4,9 +4,8 @@ import ChatMessages from './ChatMessages';
 import ChatMessage from './ChatMessage';
 import MessageModel from '../models/message';
 
-const messages = [new MessageModel('test 1'), new MessageModel('test 2')];
-
 describe('Chat messages', () => {
+  const messages = [new MessageModel('test 1'), new MessageModel('test 2')];
   let wrapper;
 
   beforeEach(() => {

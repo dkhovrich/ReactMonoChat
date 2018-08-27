@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import configureStore from 'redux-mock-store';
 import { Badge } from 'react-bootstrap';
 import { Chat } from './Chat';
 import ChatMessages from './ChatMessages';
@@ -9,20 +8,12 @@ import MessageModel from '../models/message';
 
 describe('Chat', () => {
   const messages = [new MessageModel('test 1'), new MessageModel('test 2')];
-  const initialState = {};
-  const mockStore = configureStore();
   let wrapper;
-  let store;
   let onNewMessage;
 
   beforeEach(() => {
-    store = mockStore(initialState);
     onNewMessage = jest.fn();
-    wrapper = shallow(<Chat
-      store={store}
-      messages={messages}
-      onNewMessage={onNewMessage} />
-    );
+    wrapper = shallow(<Chat messages={messages} onNewMessage={onNewMessage} />);
   });
 
   it('should display message count', () => {

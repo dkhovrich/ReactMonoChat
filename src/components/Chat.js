@@ -3,11 +3,14 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Panel, Badge } from 'react-bootstrap';
 
+import WindowResize from '../utils/windowResize';
 import ChatMessages from './ChatMessages';
 import ChatInput from './ChatInput';
 import { addMessage } from '../actions/messageActions';
 
 import MessageModel from '../models/message';
+
+const onResize = () => console.log('Resize!');
 
 export const Chat = ({ messages, onNewMessage }) => {
   return (
@@ -22,6 +25,7 @@ export const Chat = ({ messages, onNewMessage }) => {
         <ChatMessages messages={messages} />
         <ChatInput onSend={onNewMessage} />
       </Panel.Body>
+      <WindowResize func={onResize} />
     </Panel>
   );
 };
